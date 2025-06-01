@@ -2,14 +2,34 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import { Link } from 'react-router-dom';
 // import criancasFutebol from './assets/criancas-futebol.jpg'; // Removendo a importação da imagem antiga
 import bgFutebol from './assets/bg-futebol.jpg';
+import zs from './assets/icnv-urucania.png';
+import coroa from './assets/coroa-espinhos.jpg';
+import familiaPastoral from './assets/familia-pastoral.jpg';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import React from 'react';
 import { supabase } from './supabaseClient';
 
+const COLORS = {
+  red: '#d00000',
+  darkRed: '#9a0000',
+  yellow: '#ffba08',
+  blue: '#4e87d1',
+  darkBlue: '#162c48',
+  green: '#54775c',
+  white: '#ffffff',
+  black: '#00121c',
+  lightBlack: 'rgb(75, 75, 75)',
+  lightGray: '#f8f9fa',
+  lightGrayTranslucent: 'rgba(248, 249, 250, 0.93)',
+  blueTranslucent: 'rgba(78,135,209, 0.83)',
+  yellowTranslucent: 'rgba(255, 186, 8, 0.83)',
+  greenTranslucent: 'rgba(84, 119, 92, 0.83)',
+};
+
 // Add Google Font
 const fontLink = document.createElement('link');
-fontLink.href = 'https://fonts.googleapis.com/css2?family=Barriecito&display=swap';
+fontLink.href = 'https://fonts.googleapis.com/css2?family=Barriecito&family=Open+Sans:wght@300;400&family=Roboto:wght@400;500;700&display=swap';
 fontLink.rel = 'stylesheet';
 document.head.appendChild(fontLink);
 
@@ -35,25 +55,44 @@ globalStyle.textContent = `
     flex-direction: column;
   }
 
-  
+  .sobre-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  .sobre-text strong {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  .sobre-heading {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .button-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px 0 ${COLORS.red}33;
+  }
+
+  .link-hover:hover {
+    background: #d3d9df;
+  }
+
+  @media (max-width: 768px) {
+    form > div:last-child {
+      position: static !important;
+      flex-direction: column-reverse !important;
+      gap: 20px !important;
+      margin-top: 30px !important;
+    }
+    form > div:last-child a,
+    form > div:last-child button {
+      width: 100% !important;
+      text-align: center !important;
+    }
+  }
 `;
 document.head.appendChild(globalStyle);
-
-const COLORS = {
-  red: '#d00000',
-  darkRed: '#9a0000',
-  yellow: '#ffba08',
-  blue: '#4e87d1',
-  darkBlue: '#162c48',
-  green: '#54775c',
-  white: '#ffffff',
-  black: '#00121c',
-  lightGray: '#f8f9fa',
-  lightGrayTranslucent: 'rgba(248, 249, 250, 0.93)',
-  blueTranslucent: 'rgba(78,135,209, 0.83)',
-  yellowTranslucent: 'rgba(255, 186, 8, 0.83)',
-  greenTranslucent: 'rgba(84, 119, 92, 0.83)',
-};
 
 const globalStyles = {
   container: {
@@ -75,10 +114,10 @@ const globalStyles = {
     transition: 'all 0.3s ease',
     border: 'none',
     cursor: 'pointer',
-    '&:hover': {
-      transform: 'translateY(-2px)',
-      boxShadow: `0 6px 16px 0 ${COLORS.red}33`,
-    },
+  },
+  buttonHover: {
+    transform: 'translateY(-2px)',
+    boxShadow: `0 6px 16px 0 ${COLORS.red}33`,
   },
   input: {
     width: '100%',
@@ -97,6 +136,12 @@ const globalStyles = {
     fontWeight: '700',
     marginBottom: '32px',
     textAlign: 'center' as const,
+  },
+  h3: {    
+    color:`${COLORS.black}`, 
+    marginBottom: '.5rem', 
+    fontSize: '1.3rem',
+    fontWeight: '800',
   }
 };
 
@@ -117,13 +162,19 @@ function Landing() {
     }}>
       {/* Hero Section */}
       <div
+        className="hero-section"
         style={{
           background: COLORS.darkBlue,
           padding: '80px 0',
           width: '100%',
           flex: 1,
         }}>
-        <div style={globalStyles.container}>
+        <div style={{
+          ...globalStyles.container,
+          width: '100%',
+          maxWidth: '100%',
+          padding: '0 2rem',
+        }}>
           <div style={{
             display: 'flex',
             flexDirection: 'row',
@@ -164,7 +215,8 @@ function Landing() {
                   color: COLORS.white,
                   padding: '20px 40px',
                   boxShadow: `0 6px 16px ${COLORS.red}33`,
-                }}>
+                }}
+                className="button-hover">
                 <div
                   style={{ display: 'inline-block' }}
                 >
@@ -198,7 +250,12 @@ function Landing() {
           padding: '60px 0 40px 0',
           width: '100%',
         }}>
-        <div style={globalStyles.container}>
+        <div style={{
+          ...globalStyles.container,
+          width: '100%',
+          maxWidth: '100%',
+          padding: '0 2rem',
+        }}>
           <h2 style={{
             ...globalStyles.h2,
           }}>
@@ -247,7 +304,12 @@ function Landing() {
           padding: '60px 0',
           width: '100%',
         }}>
-        <div style={globalStyles.container}>
+        <div style={{
+          ...globalStyles.container,
+          width: '100%',
+          maxWidth: '100%',
+          padding: '0 2rem',
+        }}>
           <div style={{
             background: COLORS.blueTranslucent,
             borderRadius: '20px',
@@ -258,39 +320,37 @@ function Landing() {
             <h2 style={{
               ...globalStyles.h2,
               color: COLORS.white,
+              marginBottom: '0px',
             }}>
               Informações Importantes
             </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: 32,
-              marginBottom: 40,
-              width: '100%',
-            }}>
-              <motion.div
+            <div className='informacoes'>
+              <motion.div 
+                className='card-professores'
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
-                style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
+                style={{ background: COLORS.lightGrayTranslucent }}>
                 <h3 style={{ color: COLORS.red, marginBottom: 12, fontSize: '1.35rem' }}>Idade</h3>
                 <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>7 a 11 anos</p>
               </motion.div>
-              <motion.div
+              <motion.div 
+                className='card-professores'
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
-                style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
+                style={{ background: COLORS.lightGrayTranslucent }}>
                 <h3 style={{ color: COLORS.blue, marginBottom: 12, fontSize: '1.35rem' }}>Horário</h3>
                 <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>Segunda-feira, 18h às 19h30</p>
               </motion.div>
               <motion.div
+                className='card-professores'
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
-                style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
+                style={{ background: COLORS.lightGrayTranslucent }}>
                 <h3 style={{ color: COLORS.green, marginBottom: 12, fontSize: '1.35rem' }}>Local</h3>
                 <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>Campo de futebol da 27, R. Dinalva Oliveira Teixeira, 107-187 - Urucânia, Rio de Janeiro - RJ</p>
               </motion.div>
             </div>
-            <div style={{ margin: '40px 0', width: '100%' }}>
+            <div className='mapa'>
               <iframe
                 title="Mapa da Escolinha Nova Geração"
                 src="https://www.google.com/maps?q=R.+Dinalva+Oliveira+Teixeira,+107-187+-+Paci%C3%AAncia,+Rio+de+Janeiro+-+RJ,+23573-405&z=17&output=embed"
@@ -307,6 +367,50 @@ function Landing() {
               ></iframe>
             </div>
           </div>
+
+          {/* New About Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{
+              background: COLORS.lightGrayTranslucent,
+              borderRadius: '20px',
+              padding: '48px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+              width: '100%',
+              marginTop: '40px',
+              textAlign: 'center',
+            }}>
+            <h2 style={{
+              ...globalStyles.h2,
+              marginBottom: '1.5rem',
+            }}>
+              Conheça Nossa Igreja
+            </h2>
+            <p style={{
+              color: COLORS.darkBlue,
+              fontSize: '1.2rem',
+              lineHeight: 1.6,
+              marginBottom: '2rem',
+              maxWidth: '800px',
+              margin: '0 auto 2rem auto',
+            }}>
+              A Escolinha Nova Geração é uma iniciativa da Igreja Cristã Nova Vida de Urucânia,
+              que busca impactar vidas através do esporte e dos valores cristãos.
+            </p>
+            <Link
+              to="/sobre"
+              style={{
+                ...globalStyles.button,
+                backgroundColor: COLORS.blue,
+                display: 'inline-block',
+                padding: '16px 32px',
+                fontSize: '1.2rem',
+              }}>
+              Saiba mais sobre a ICNV
+            </Link>
+          </motion.div>
         </div>
       </motion.div>
 
@@ -319,7 +423,12 @@ function Landing() {
           padding: '60px 0',
           width: '100%',
         }}>
-        <div style={globalStyles.container}>
+        <div style={{
+          ...globalStyles.container,
+          width: '100%',
+          maxWidth: '100%',
+          padding: '0 2rem',
+        }}>
           <div style={{
             background: 'rgba(255, 186, 8, 0.8)',
             borderRadius: '20px',
@@ -350,12 +459,9 @@ function Landing() {
                 background: COLORS.red,
                 color: COLORS.white,
                 padding: '20px 40px',
-                boxShadow: `0 4px 12px ${COLORS.red}22`,
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: `0 6px 16px ${COLORS.red}33`,
-                },
-              }}>
+                boxShadow: `0 6px 16px ${COLORS.red}33`,
+              }}
+              className="button-hover">
               <div
                 style={{ display: 'inline-block' }}
               >
@@ -374,7 +480,12 @@ function Landing() {
         textAlign: 'center',
         width: '100%',
       }}>
-        <div style={globalStyles.container}>
+        <div style={{
+          ...globalStyles.container,
+          width: '100%',
+          maxWidth: '100%',
+          padding: '0 2rem',
+        }}>
           <p style={{ margin: 0, fontSize: '1.25rem', fontStyle: 'italic', marginBottom: 5 }}>"Tudo o que fizerem, façam de todo o coração, como para o Senhor, não para os homens, sabendo que receberão do Senhor a recompensa da herança, pois é a Cristo, o Senhor, a quem vocês servem."</p>
           <p style={{ margin: 0, fontSize: '1.1rem', marginBottom: 50 }}>Colossenses 3:23-24</p>
           <p style={{ margin: 0 }}>© 2024 Escolinha Nova Geração, ICNV Urucânia. Todos os direitos reservados.</p>
@@ -386,9 +497,11 @@ function Landing() {
 
 function Inscricao() {
   const navigate = useNavigate();
-  const [studentName, setStudentName] = useState('');
+  const [studentFirstName, setStudentFirstName] = useState('');
+  const [studentLastName, setStudentLastName] = useState('');
   const [studentAge, setStudentAge] = useState('');
-  const [guardianName, setGuardianName] = useState('');
+  const [guardianFirstName, setGuardianFirstName] = useState('');
+  const [guardianLastName, setGuardianLastName] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [sameAddress, setSameAddress] = useState(true);
   const [studentAddress, setStudentAddress] = useState({
@@ -414,13 +527,15 @@ function Inscricao() {
     event.preventDefault();
 
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('inscricoes')
         .insert([
           {
-            nome_aluno: studentName,
+            nome_aluno: studentFirstName,
+            sobrenome_aluno: studentLastName,
             idade_aluno: parseInt(studentAge),
-            nome_responsavel: guardianName,
+            nome_responsavel: guardianFirstName,
+            sobrenome_responsavel: guardianLastName,
             whatsapp: whatsapp,
             mesmo_endereco: sameAddress,
             endereco_aluno_rua: studentAddress.street,
@@ -437,9 +552,11 @@ function Inscricao() {
       if (error) throw error;
 
       // Reset form
-      setStudentName('');
+      setStudentFirstName('');
+      setStudentLastName('');
       setStudentAge('');
-      setGuardianName('');
+      setGuardianFirstName('');
+      setGuardianLastName('');
       setWhatsapp('');
       setSameAddress(true);
       setStudentAddress({ street: '', number: '', complement: '', neighborhood: '' });
@@ -510,24 +627,41 @@ function Inscricao() {
           }}>Dados do Aluno</h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div>
-              <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="studentName">Nome do Aluno:</label>
-              <input
-                type="text"
-                id="studentName"
-                value={studentName}
-                onChange={(e) => setStudentName(e.target.value)}
-                placeholder='Nome do aluno'
-                required
-                style={{
-                  ...globalStyles.input,
-                  border: `1px solid ${COLORS.blue}`,
-                }}
-              />
+            <div style={{ display: 'flex', gap: '20px' }}>
+              <div style={{ flex: 1 }}>
+                <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="studentFirstName">Nome:</label>
+                <input
+                  type="text"
+                  id="studentFirstName"
+                  value={studentFirstName}
+                  onChange={(e) => setStudentFirstName(e.target.value)}
+                  placeholder='Nome'
+                  required
+                  style={{
+                    ...globalStyles.input,
+                    border: `1px solid ${COLORS.blue}`,
+                  }}
+                />
+              </div>
+              <div style={{ flex: 1 }}>
+                <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="studentLastName">Sobrenome:</label>
+                <input
+                  type="text"
+                  id="studentLastName"
+                  value={studentLastName}
+                  onChange={(e) => setStudentLastName(e.target.value)}
+                  placeholder='Sobrenome'
+                  required
+                  style={{
+                    ...globalStyles.input,
+                    border: `1px solid ${COLORS.blue}`,
+                  }}
+                />
+              </div>
             </div>
 
             <div>
-              <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="studentAge">Idade do Aluno (7 a 11 anos):</label>
+              <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="studentAge">Idade (7 a 11 anos):</label>
               <select
                 id="studentAge"
                 value={studentAge}
@@ -564,19 +698,37 @@ function Inscricao() {
           }}>Dados do Responsável</h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div>
-              <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="guardianName">Nome do Responsável:</label>
-              <input
-                type="text"
-                id="guardianName"
-                value={guardianName}
-                onChange={(e) => setGuardianName(e.target.value)}
-                required
-                style={{
-                  ...globalStyles.input,
-                  border: `1px solid ${COLORS.green}`,
-                }}
-              />
+            <div style={{ display: 'flex', gap: '20px' }}>
+              <div style={{ flex: 1 }}>
+                <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="guardianFirstName">Nome:</label>
+                <input
+                  type="text"
+                  id="guardianFirstName"
+                  value={guardianFirstName}
+                  onChange={(e) => setGuardianFirstName(e.target.value)}
+                  placeholder='Nome'
+                  required
+                  style={{
+                    ...globalStyles.input,
+                    border: `1px solid ${COLORS.green}`,
+                  }}
+                />
+              </div>
+              <div style={{ flex: 1 }}>
+                <label style={{ display: 'block', color: COLORS.white, fontWeight: 600, marginBottom: '8px' }} htmlFor="guardianLastName">Sobrenome:</label>
+                <input
+                  type="text"
+                  id="guardianLastName"
+                  value={guardianLastName}
+                  onChange={(e) => setGuardianLastName(e.target.value)}
+                  placeholder='Sobrenome'
+                  required
+                  style={{
+                    ...globalStyles.input,
+                    border: `1px solid ${COLORS.green}`,
+                  }}
+                />
+              </div>
             </div>
 
             <div>
@@ -770,20 +922,20 @@ function Inscricao() {
           justifyContent: 'space-between',
           alignItems: 'center',
         }}>
-          <Link to="/" style={{
-            display: 'inline-block',
-            padding: '10px 20px',
-            background: COLORS.lightGray,
-            color: COLORS.darkBlue,
-            textDecoration: 'none',
-            borderRadius: '5px',
-            fontSize: '1rem',
-            fontWeight: 600,
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              background: '#d3d9df',
-            },
-          }}>
+          <Link
+            to="/"
+            style={{
+              display: 'inline-block',
+              padding: '10px 20px',
+              background: COLORS.lightGray,
+              color: COLORS.darkBlue,
+              textDecoration: 'none',
+              borderRadius: '5px',
+              fontSize: '1rem',
+              fontWeight: 600,
+              transition: 'all 0.3s ease',
+            }}
+            className="link-hover">
             ← Voltar para a Página Inicial
           </Link>
 
@@ -799,25 +951,6 @@ function Inscricao() {
           </button>
         </div>
       </form>
-
-      {/* Add a style tag for responsive design */}
-      <style>
-        {`
-          @media (max-width: 768px) {
-            form > div:last-child {
-              position: static !important;
-              flex-direction: column-reverse !important;
-              gap: 20px !important;
-              margin-top: 30px !important;
-            }
-            form > div:last-child a,
-            form > div:last-child button {
-              width: 100% !important;
-              text-align: center !important;
-            }
-          }
-        `}
-      </style>
     </motion.div>
   );
 }
@@ -853,7 +986,6 @@ function SuccessPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
       style={{
-        height: '270vh',
         width: '100%',
         margin: 0,
         backgroundImage: `url(${bgFutebol})`,
@@ -863,7 +995,12 @@ function SuccessPage() {
         display: 'flex',
         flexDirection: 'column',
       }}>
-      <div style={globalStyles.container}>
+      <div style={{
+        ...globalStyles.container,
+        width: '100%',
+        maxWidth: '100%',
+        padding: '0 2rem',
+      }}>
         <div style={{
           padding: '40px',
           minHeight: '70vh',
@@ -895,7 +1032,7 @@ function SuccessPage() {
               fontSize: '1.2rem',
               lineHeight: 1.6,
               textAlign: 'center',
-              marginTop:'2rem',
+              marginTop: '2rem',
             }}>
               Estamos ansiosos para te ver em campo!
               <br />
@@ -904,15 +1041,14 @@ function SuccessPage() {
               Prepare-se para aprender, crescer e se divertir muito! ⚽💙
             </p>
 
-            <div style={{
+            <div className='mais-info' style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               gap: '1rem',
-              marginTop: '2rem',
             }}>
-              <span style={{ 
-                color: COLORS.black, 
+              <span style={{
+                color: COLORS.black,
                 fontSize: '1.2rem',
                 fontWeight: 500,
               }}>
@@ -952,57 +1088,60 @@ function SuccessPage() {
           marginBottom: '40px',
           marginTop: '30vh',
         }}>
-          <h2 style={{
-            ...globalStyles.h2,
-            color: COLORS.black,
-          }}>
-            Informações Importantes
-          </h2>
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: 32,
-            marginBottom: 40,
+            background: COLORS.blueTranslucent,
+            borderRadius: '20px',
+            padding: '48px',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
             width: '100%',
           }}>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-              style={{ background: COLORS.white, padding: 24, borderRadius: 12 }}>
-              <h3 style={{ color: COLORS.red, marginBottom: 12, fontSize: '1.35rem' }}>Idade</h3>
-              <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>7 a 11 anos</p>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-              style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
-              <h3 style={{ color: COLORS.blue, marginBottom: 12, fontSize: '1.35rem' }}>Horário</h3>
-              <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>Segunda-feira, 18h às 19h30</p>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-              style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
-              <h3 style={{ color: COLORS.green, marginBottom: 12, fontSize: '1.35rem' }}>Local</h3>
-              <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>Campo de futebol da 27, R. Dinalva Oliveira Teixeira, 107-187 - Urucânia, Rio de Janeiro - RJ</p>
-            </motion.div>
-          </div>
-
-          <div style={{ margin: '40px 0', width: '100%' }}>
-            <iframe
-              title="Mapa da Escolinha Nova Geração"
-              src="https://www.google.com/maps?q=R.+Dinalva+Oliveira+Teixeira,+107-187+-+Paci%C3%AAncia,+Rio+de+Janeiro+-+RJ,+23573-405&z=17&output=embed"
-              width="100%"
-              height="500"
-              style={{
-                border: 0,
-                borderRadius: '16px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-              }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <h2 style={{
+              ...globalStyles.h2,
+              color: COLORS.white,
+            }}>
+              Informações Importantes
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: 32,
+              marginBottom: 40,
+              width: '100%',
+            }}>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.2 }}
+                style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
+                <h3 style={{ color: COLORS.red, marginBottom: 12, fontSize: '1.35rem' }}>Idade</h3>
+                <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>7 a 11 anos</p>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.2 }}
+                style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
+                <h3 style={{ color: COLORS.blue, marginBottom: 12, fontSize: '1.35rem' }}>Horário</h3>
+                <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>Segunda-feira, 18h às 19h30</p>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.2 }}
+                style={{ background: COLORS.lightGrayTranslucent, padding: 24, borderRadius: 12 }}>
+                <h3 style={{ color: COLORS.green, marginBottom: 12, fontSize: '1.35rem' }}>Local</h3>
+                <p style={{ color: COLORS.darkBlue, fontSize: '1rem' }}>Campo de futebol da 27, R. Dinalva Oliveira Teixeira, 107-187 - Urucânia, Rio de Janeiro - RJ</p>
+              </motion.div>
+            </div>
+            <div style={{ margin: '40px 0', width: '100%' }}>
+              <iframe
+                title="Mapa da ICNV Urucânia"
+                src="https://www.google.com/maps?q=R.+Jos%C3%A9+Silton+Pinheiro,+141+-+CASA+01+-+Paci%C3%AAncia,+Rio+de+Janeiro+-+RJ,+23573-340&z=17&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
 
@@ -1010,6 +1149,7 @@ function SuccessPage() {
           <Link to="/" style={{
             display: 'inline-block',
             padding: '10px 20px',
+            marginBottom: '2.5rem',
             background: COLORS.lightGray,
             color: COLORS.darkBlue,
             textDecoration: 'none',
@@ -1017,14 +1157,405 @@ function SuccessPage() {
             fontSize: '1rem',
             fontWeight: 600,
             transition: 'all 0.3s ease',
-            '&:hover': {
-              background: '#d3d9df',
-            },
           }}>
             ← Voltar para a Página Inicial
           </Link>
         </div>
       </div>
+    </motion.div>
+  );
+}
+
+function Sobre() {
+  const sobreColors = {
+    gold: '#E6BB49',
+    brown: '#99582a',
+    black: '#000000',
+    white: '#FFFFFF',
+    lightGold: '#FFF8DC',
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      style={{
+        minHeight: '100vh',
+        width: '100%',
+        margin: 0,
+        padding: 0,
+        backgroundColor: sobreColors.white,
+        fontFamily: 'Open Sans, sans-serif',
+        fontWeight: 300,
+      }}>
+      
+      {/* Hero Section */}
+      <div 
+        className="hero-section"
+        style={{
+          width: '100%',
+          height: '60vh',
+          position: 'relative',
+          overflow: 'hidden',
+          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${coroa})`,
+          backgroundSize: '100%',
+          backgroundPosition: 'left 35% bottom 45%',
+          backgroundRepeat: 'no-repeat',
+          backgroundColor: '#000',
+        }}>
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
+          color: sobreColors.white,
+          width: '100%',
+          padding: '0 2rem',
+        }}>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+            }}>
+            ICNV URUCÂNIA
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{
+              fontSize: 'clamp(1rem, 3vw, 1.5rem)',
+              maxWidth: '800px',
+              margin: '0 auto',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+            }}>
+            Uma comunidade de discípulos que formam discípulos
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '4rem 2rem',
+      }}>
+        {/* História */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            marginBottom: '6rem',
+            textAlign: 'center',
+          }}>
+          <h2 style={{
+            color: sobreColors.brown,
+            fontSize: 'clamp(1.8rem, 4vw, 1.5rem)',
+            marginBottom: '2rem',
+            fontWeight: '600',
+            fontFamily: 'Roboto, sans-serif',
+          }} className="sobre-heading">Nossa História</h2>
+          <p style={{
+            color: sobreColors.black,
+            fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+            lineHeight: 1.8,
+            maxWidth: '800px',
+            margin: '0 auto',
+          }} className="sobre-text">
+            A Igreja Cristã Nova Vida de Urucânia surgiu há 19 anos, a partir do desejo de levar a Palavra de Deus à nossa comunidade. 
+            Tudo começou quando um membro da ICNV de Paciência compartilhou com o Pr. Evandro a necessidade de uma congregação em Urucânia. 
+            Sensível à direção de Deus, o pastor atendeu ao chamado e, desde então, temos sido um ponto de luz e esperança neste lugar.
+          </p>
+        </motion.div>
+
+        {/* Pastor e Família */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            marginBottom: '6rem',
+            background: sobreColors.brown,
+            padding: '4rem 0',
+            width: '100vw',
+            marginLeft: 'calc(-50vw + 50%)',
+            marginRight: 'calc(-50vw + 50%)',
+          }}>
+          <div style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            padding: '0 2rem',
+            display: 'flex',
+            gap: '4rem',
+            alignItems: 'center',
+            flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
+          }}>
+            <div style={{ 
+              flex: window.innerWidth <= 768 ? '0 0 auto' : '0 0 400px',
+              width: window.innerWidth <= 768 ? '100%' : 'auto',
+              maxWidth: '400px',
+            }}>
+              <img
+                src={familiaPastoral}
+                alt="Família Pastoral"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                }}
+              />
+            </div>
+            <div style={{ flex: 1 }}>
+              <h2 style={{
+                color: sobreColors.white,
+                fontSize: 'clamp(1.8rem, 4vw, 1.5rem)',
+                marginBottom: '2rem',
+                fontWeight: '600',
+                fontFamily: 'Roboto, sans-serif',
+              }} className="sobre-heading">Nosso Pastor e Família</h2>
+              <p style={{
+                color: sobreColors.white,
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                lineHeight: 1.8,
+              }} className="sobre-text">
+                A liderança da Igreja Cristã Nova Vida de Urucânia está sob os cuidados do Pr. Jeremias Fernandes, que foi consagrado ao ministério pastoral em 2011. 
+                Desde então, tem conduzido a igreja com fé, dedicação e sensibilidade à direção de Deus. 
+                Ao seu lado está sua esposa, irmã Lídia Lopes, uma mulher de oração e apoio constante na obra do Senhor.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            color: sobreColors.black,
+            fontSize: '1.8rem',
+            lineHeight: 1.8,
+            margin: '5rem 0',
+            textAlign: 'center',
+            fontFamily: 'Roboto, sans-serif',
+            fontWeight: '500',
+            position: 'relative',
+            padding: '1rem 2rem',
+            display: 'block',
+            width: 'fit-content',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            borderTop: `2px solid ${sobreColors.black}`,
+            borderBottom: `2px solid ${sobreColors.black}`,
+            letterSpacing: '1px',
+          }} className="sobre-heading">
+          Venha fazer uma visita!
+        </motion.p>
+
+        {/* Horários */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            marginBottom: '6rem',
+            textAlign: 'center',
+          }}>
+          <h2 style={{
+            color: sobreColors.brown,
+            fontSize: 'clamp(1.8rem, 4vw, 2rem)',
+            marginBottom: '3rem',
+            fontWeight: '600',
+            fontFamily: 'Roboto, sans-serif',
+          }} className="sobre-heading">Nossos Encontros</h2>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.5rem',
+            maxWidth: '800px',
+            margin: '0 auto',
+            textAlign: 'left',
+          }}>
+            <div>
+              <p style={{
+                color: sobreColors.black,
+                fontSize: '1rem',
+                lineHeight: 1.8,
+                textAlign: 'center',
+              }}><strong>Domingos:</strong><br />
+                9h00 Culto de Oração<br />
+                10h00 Escola Bíblica Dominical<br />
+                19h00 Culto de Louvor e Adoração
+              </p>
+            </div>
+
+            <div>
+              <p style={{
+                color: sobreColors.black,
+                fontSize: '1rem',
+                lineHeight: 1.8,
+                textAlign: 'center',
+              }}><strong>Terça-feira: </strong>19h30 Oração das Mulheres
+              </p>
+            </div>
+
+            <div>
+              <p style={{
+                color: sobreColors.black,
+                fontSize: '1rem',
+                lineHeight: 1.8,
+                textAlign: 'center',
+              }}><strong>Quarta-feira: </strong>19h30 Culto de Louvor e Adoração
+              </p>
+            </div>
+
+            <div>
+              <p style={{
+                color: sobreColors.black,
+                fontSize: '1rem',
+                lineHeight: 1.8,
+                textAlign: 'center',
+              }}><strong>Sexta-feira: </strong>20h00 Oração dos Homens (a cada 15 dias)
+              </p>
+            </div>
+
+            <div>
+              <p style={{
+                color: sobreColors.black,
+                fontSize: '1rem',
+                lineHeight: 1.8,
+                textAlign: 'center',
+              }}><strong>Sábado: </strong>19h00 Culto de Louvor e Adoração
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Localização */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            textAlign: 'center',
+          }}>
+          <h2 style={{
+            color: sobreColors.brown,
+            fontSize: 'clamp(1.8rem, 4vw, 1.5rem)',
+            marginBottom: '2rem',
+            fontWeight: '600',
+            textAlign: 'center',
+            fontFamily: 'Roboto, sans-serif',
+          }} className="sobre-heading">Localização</h2>
+          <p style={{
+            color: sobreColors.black,
+            fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+            lineHeight: 1.8,
+            marginBottom: '2rem',
+            textAlign: 'center',
+          }} className="sobre-text">
+            R. José Silton Pinheiro, 141 - CASA 01<br />
+            Paciência, Rio de Janeiro - RJ<br />
+            CEP: 23573-340
+          </p>
+          <div style={{
+            width: '100%',
+            height: 'clamp(300px, 50vw, 400px)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 20px rgba(62, 62, 62, 0.15)',
+          }}>
+            <iframe
+              title="Mapa da ICNV Urucânia"
+              src="https://www.google.com/maps?q=R.+Jos%C3%A9+Silton+Pinheiro,+141+-+CASA+01+-+Paci%C3%AAncia,+Rio+de+Janeiro+-+RJ,+23573-340&z=17&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Footer */}
+      <footer style={{
+        background: sobreColors.brown,
+        color: sobreColors.white,
+        padding: '4rem 2rem',
+        marginTop: '4rem',
+        textAlign: 'center',
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+        }}>
+          <p style={{
+            fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+            marginBottom: '1rem',
+          }} className="sobre-text">
+            "No centro da nossa confissão está o Evangelho de Jesus Cristo – a verdade gloriosa de que Jesus Cristo morreu e ressuscitou para que pecadores fossem reconciliados com Deus."
+          </p>
+          <Link
+            to="/"
+            style={{
+              display: 'inline-block',
+              padding: '12px 32px',
+              background: sobreColors.white,
+              color: sobreColors.brown,
+              textDecoration: 'none',
+              borderRadius: '8px',
+              fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
+              fontWeight: '500',
+              marginTop: '2rem',
+              transition: 'all 0.3s ease',
+            }}
+            className="link-hover">
+            Voltar para a Página Inicial
+          </Link>
+        </div>
+      </footer>
+
+      {/* Adicionando estilos responsivos */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .main-content {
+              padding: 2rem 1rem;
+            }
+            .hero-section {
+              background-size: 180% !important;
+            }
+            .footer {
+              padding: 2rem 1rem;
+            }
+            .pastor-section {
+              flex-direction: column;
+              gap: 2rem;
+            }
+            .pastor-image {
+              width: 100%;
+              max-width: 400px;
+            }
+          }
+        `}
+      </style>
     </motion.div>
   );
 }
@@ -1037,6 +1568,7 @@ function App() {
         <Route path="/inscricao" element={<Inscricao />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/sucesso" element={<SuccessPage />} />
+        <Route path="/sobre" element={<Sobre />} />
       </Routes>
     </Router>
   );

@@ -55,17 +55,58 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.success-container, span {
+.card-professores {
+  background: rgba(248, 249, 250, 0.93);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: .5rem;
+}
+
+.informacoes {
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.mapa {
+  margin: 40px 0;
+  width: 100%;
+}
+
+.success-container{
   padding-top: 6rem;
+  height: 80vh;
+}
+
+.mais-info{
+  padding-top: 8rem;
+}
+
+.card-cultos {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 250px;
 }
 
 @media (max-width: 768px){
   .success-container {
-    padding-top: 3rem !important;
+      padding-top: 1rem !important;
+      height: 50vh;
+    }
+  .mais-info{
+    padding-top: 1rem !important;
   }
 
-  .success-container span{
-    margin-top: '1rem';
+  .informacoes {
+    grid-template-columns: 1fr;
+    margin-top: 10vh;
   }
 }
 
