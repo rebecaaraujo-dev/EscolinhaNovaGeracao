@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import { Link } from 'react-router-dom';
 // import criancasFutebol from './assets/criancas-futebol.jpg'; // Removendo a importação da imagem antiga
 import bgFutebol from './assets/bg-futebol.jpg';
-import zs from './assets/icnv-urucania.png';
 import coroa from './assets/coroa-espinhos.jpg';
 import familiaPastoral from './assets/familia-pastoral.jpg';
 import { motion } from 'framer-motion';
