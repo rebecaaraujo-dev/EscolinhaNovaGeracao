@@ -164,7 +164,7 @@ function Landing() {
         className="hero-section"
         style={{
           background: COLORS.darkBlue,
-          padding: '80px 0',
+          padding: '5rem',
           width: '100%',
           flex: 1,
         }}>
