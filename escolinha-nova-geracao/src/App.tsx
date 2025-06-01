@@ -300,7 +300,7 @@ function Landing() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         style={{
-          padding: '60px 0',
+          padding: '40px 0',
           width: '100%',
         }}>
         <div style={{
@@ -315,6 +315,7 @@ function Landing() {
             padding: '48px',
             boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
             width: '100%',
+            marginBottom: '40px',
           }}>
             <h2 style={{
               ...globalStyles.h2,
@@ -378,7 +379,6 @@ function Landing() {
               padding: '48px',
               boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
               width: '100%',
-              marginTop: '40px',
               textAlign: 'center',
             }}>
             <h2 style={{
@@ -419,7 +419,7 @@ function Landing() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         style={{
-          padding: '60px 0',
+          padding: '20px 0',
           width: '100%',
         }}>
         <div style={{
@@ -1507,26 +1507,26 @@ function Sobre() {
         }}>
           <p style={{
             fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-            marginBottom: '1rem',
+            fontStyle: 'italic',
+            marginBottom: '1rem'
           }} className="sobre-text">
-            "No centro da nossa confissão está o Evangelho de Jesus Cristo – a verdade gloriosa de que Jesus Cristo morreu e ressuscitou para que pecadores fossem reconciliados com Deus."
+            "Mas Deus demonstra seu amor por nós: Cristo morreu em nosso favor quando ainda éramos pecadores."
           </p>
-          <Link
-            to="/"
-            style={{
-              display: 'inline-block',
-              padding: '12px 32px',
-              background: sobreColors.white,
-              color: sobreColors.brown,
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontSize: 'clamp(0.9rem, 2vw, 1.1rem)',
-              fontWeight: '500',
-              marginTop: '2rem',
-              transition: 'all 0.3s ease',
-            }}
-            className="link-hover">
-            Voltar para a Página Inicial
+          <p style={{ margin: 0, fontSize: '1.1rem', marginBottom: 50 }}>Romanos 5:8</p>
+          
+          <Link to="/" style={{
+            display: 'inline-block',
+            padding: '10px 20px',
+            marginBottom: '2.5rem',
+            background: COLORS.lightGray,
+            color: COLORS.darkBlue,
+            textDecoration: 'none',
+            borderRadius: '5px',
+            fontSize: '1rem',
+            fontWeight: 600,
+            transition: 'all 0.3s ease',
+          }}>
+            ← Voltar para a Página Inicial
           </Link>
         </div>
       </footer>
