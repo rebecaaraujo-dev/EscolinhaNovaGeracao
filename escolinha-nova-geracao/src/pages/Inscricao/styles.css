@@ -1,0 +1,672 @@
+@import url("../../index.css");
+
+.inscricao-container {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.inscricao-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.inscricao-title {
+  color: var(--black);
+  font-size: 2.5rem !important;
+  font-weight: 700;
+  font-family: var(--font-secondary) !important;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.inscricao-description {
+  color: var(--black);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.inscricao-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.dados-aluno-section {
+  background: var(--blue-translucent);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dados-aluno-section h2 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: var(--font-secondary);
+}
+
+.dados-aluno-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dados-aluno-row {
+  display: flex;
+  gap: 20px;
+}
+
+.dados-aluno-field {
+  flex: 1;
+}
+
+.dados-aluno-label {
+  display: block;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dados-aluno-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+}
+
+.dados-aluno-input:focus {
+  outline: none;
+  border-color: var(--dark-blue);
+}
+
+.dados-aluno-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.dados-aluno-select:focus {
+  outline: none;
+  border-color: var(--dark-blue);
+}
+
+.dados-aluno-select option:first-child {
+  color: #aaa;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px 0 var(--red)22;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px 0 var(--red)33;
+}
+
+.dados-responsavel-section {
+  background: var(--green-translucent);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dados-responsavel-section h2 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: var(--font-secondary);
+}
+
+.dados-responsavel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dados-responsavel-row {
+  display: flex;
+  gap: 20px;
+}
+
+.dados-responsavel-field {
+  flex: 1;
+}
+
+.dados-responsavel-label {
+  display: block;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dados-responsavel-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+}
+
+.dados-responsavel-input:focus {
+  outline: none;
+  border-color: var(--dark-green);
+}
+
+.dados-responsavel-subtitle {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.dados-responsavel-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+  color: var(--dark-green);
+  cursor: pointer;
+}
+
+.dados-responsavel-select:focus {
+  outline: none;
+  border-color: var(--dark-green);
+}
+
+.dados-responsavel-select option:first-child {
+  color: #aaa;
+}
+
+.dados-responsavel-divider {
+  height: 1px;
+  background-color: var(--white);
+  opacity: 0.2;
+  margin: 30px 0;
+}
+
+.dados-responsavel-description {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 25px;
+  text-align: center;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.dados-endereco-section {
+  background: var(--light-gray-translucent);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dados-endereco-section h2 {
+  color: var(--dark-blue);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: var(--font-secondary);
+}
+
+.dados-endereco-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dados-endereco-label {
+  display: block;
+  color: var(--dark-blue);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dados-endereco-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--dark-blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+  margin-bottom: 1rem;
+}
+
+.dados-endereco-input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.dados-endereco-row {
+  display: flex;
+  gap: 10px;
+}
+
+.dados-endereco-field {
+  width: calc(50% - 5px);
+}
+
+.dados-endereco-radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.dados-endereco-radio-label {
+  display: flex;
+  align-items: center;
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.dados-endereco-radio-input {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.dados-endereco-guardian-select {
+  margin: 15px 0 20px 0;
+}
+
+.dados-endereco-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--dark-blue);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.dados-endereco-select:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.dados-endereco-select option:first-child {
+  color: #aaa;
+}
+
+.form-buttons-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 2rem;
+}
+
+.inscricao-back-button {
+  order: 1;
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--light-gray);
+  color: var(--dark-blue);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray);
+  min-width: 200px;
+}
+
+.cta-button {
+  order: 2;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px 0 var(--red)22;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.phone-input-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.country-code {
+  color: var(--dark-blue);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem;
+  background: var(--light-gray);
+  border-right: 1px solid var(--blue);
+  min-width: 60px;
+  text-align: center;
+}
+
+.ddd-select {
+  width: 60px;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  border-right: 1px solid var(--blue);
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--dark-blue);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  background-size: 1em;
+  padding-right: 1.5rem;
+  text-align: center;
+}
+
+.ddd-select:focus {
+  outline: none;
+}
+
+.phone-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  font-size: 1rem;
+  background: var(--white);
+}
+
+.phone-input:focus {
+  outline: none;
+}
+
+.error-message {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cta-button:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cta-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 1200px){
+  .form-buttons-container{
+    padding: 0rem; 
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .inscricao-container {
+    padding: 20px 15px 40px 15px;
+  }
+
+  .inscricao-content {
+    padding: 0;
+  }
+
+  .inscricao-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .inscricao-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .inscricao-form {
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .dados-aluno-section,
+  .dados-responsavel-section,
+  .dados-endereco-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dados-aluno-section h2,
+  .dados-responsavel-section h2,
+  .dados-endereco-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .dados-aluno-row,
+  .dados-responsavel-row,
+  .dados-endereco-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dados-aluno-field,
+  .dados-responsavel-field,
+  .dados-endereco-field {
+    width: 100%;
+  }
+
+  .dados-aluno-input,
+  .dados-responsavel-input,
+  .dados-endereco-input,
+  .dados-aluno-select,
+  .dados-responsavel-select,
+  .dados-endereco-select {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .dados-responsavel-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .dados-responsavel-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .dados-endereco-radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dados-endereco-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dados-endereco-field {
+    width: 100%;
+  }
+
+  .dados-endereco-input {
+    margin-bottom: 15px;
+  }
+
+  .dados-endereco-row .dados-endereco-input {
+    margin-bottom: 0;
+  }
+
+  .dados-endereco-row + .dados-endereco-input {
+    margin-top: 15px;
+  }
+
+  .form-buttons-container {
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    padding: 20px 0 0 0;
+    width: 100%;
+  }
+
+  .inscricao-back-button,
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    min-width: unset;
+    font-size: 0.9rem;
+    padding: 12px 20px;
+    order: unset;
+  }
+
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 15px 20px;
+  }
+
+  .phone-input-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .country-code {
+    min-width: 50px;
+    padding: 0.625rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .ddd-select {
+    width: 50px;
+    padding: 0.625rem 0.25rem;
+    font-size: 0.9rem;
+    padding-right: 1.25rem;
+  }
+
+  .phone-input {
+    padding: 0.625rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inscricao-container {
+    padding: 15px 10px;
+  }
+
+  .inscricao-title {
+    font-size: 1.8rem;
+  }
+
+  .dados-aluno-section,
+  .dados-responsavel-section,
+  .dados-endereco-section {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .dados-endereco-section {
+    margin-bottom: 0;
+  }
+
+  .dados-aluno-section h2,
+  .dados-responsavel-section h2,
+  .dados-endereco-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .dados-aluno-input,
+  .dados-responsavel-input,
+  .dados-endereco-input,
+  .dados-aluno-select,
+  .dados-responsavel-select,
+  .dados-endereco-select {
+    font-size: 0.85rem;
+    padding: 0.625rem;
+  }
+
+  .form-buttons-container{
+    margin: 0;
+  }
+
+  .inscricao-back-button,
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    max-width: 300px;
+  }
+
+  .cta-button{
+    padding: 1rem 1rem;
+    font-size: 1.25rem;
+  }
+
+  .country-code {
+    min-width: 45px;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .ddd-select {
+    width: 45px;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+    padding-right: 1rem;
+  }
+
+  .phone-input {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+} 

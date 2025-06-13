@@ -1,0 +1,1069 @@
+@import "../../index.css";
+
+.hero-section {
+  background-color: var(--dark-blue);
+  padding: 0;
+  width: 100%;
+  min-height: 100vh !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 6rem 2rem;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  font-family: var(--font-primary);
+  text-align: left;
+}
+
+.hero-title-red {
+  color: var(--red);
+}
+
+.hero-title-blue {
+  color: var(--blue);
+}
+
+.hero-title-yellow {
+  color: var(--yellow);
+}
+
+.hero-description {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-height: 60vh;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.hero-image .slider-arrow {
+  display: none;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.gallery-button {
+  background-color: var(--light-gray) !important;
+  color: var(--dark-blue) !important;
+}
+
+.gallery-button:hover {
+  box-shadow: 0 6px 16px 0 var(--blue)33 !important;
+}
+
+.sobre-nossa-historia-image .slider-arrow {
+  display: flex;
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow.prev {
+  left: 10px;
+}
+
+.slider-arrow.next {
+  right: 10px;
+}
+
+.slider-arrow svg {
+  width: 24px;
+  height: 24px;
+  color: var(--brown);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px 0 var(--red)22;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px 0 var(--red)33;
+}
+
+.professores-section,
+.participacao-section,
+.info-section,
+.about-section,
+.vagas-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 3rem !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+.info-section * {
+  box-shadow: none !important;
+}
+
+.info-section {
+  background: transparent !important;
+}
+
+.info-container {
+  background: transparent !important;
+}
+
+.professores-section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.professores-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.professores-title {
+  color: var(--dark-blue);
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.professores-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.professores-divider {
+  width: 100%;
+  max-width: 980px;
+  border: none;
+  border-top: 1px solid var(--light-gray);
+}
+
+.professores-top,
+.professores-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 980px;
+}
+
+.professor-card {
+  width: 300px;
+  background-color: var(--light-gray-translucent);
+  border-radius: 16px;
+  padding: .8rem;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.professor-name {
+  color: var(--red);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-secondary);
+  font-weight: 900;
+}
+
+.professor-role {
+  color: var(--dark-blue);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.professor-description {
+  color: var(--dark-blue);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.professor-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  margin: 1rem auto .5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.professor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.info-section {
+  padding: 40px 0;
+  width: 100%;
+}
+
+.info-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
+}
+
+.info-content {
+  background: var(--blue-translucent);
+  border-radius: 20px;
+  padding: 48px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.info-title {
+  color: var(--white);
+  margin-bottom: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.info-card {
+  background: var(--light-gray-translucent);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.info-card-title {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.info-card-title.red {
+  color: var(--red);
+}
+
+.info-card-title.blue {
+  color: var(--blue);
+}
+
+.info-card-title.green {
+  color: var(--green);
+}
+
+.info-card-text {
+  color: var(--dark-blue);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info-map {
+  margin-top: 40px;
+}
+
+.info-map-iframe {
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.participacao-container,
+.info-container,
+.about-container,
+.vagas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  padding: 0 2rem !important;
+  margin: 0 auto;
+  background: transparent !important;
+  box-shadow: 0px;
+}
+
+.participacao-content,
+.info-content,
+.about-content,
+.vagas-content {
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.participacao-content {
+  background: var(--green-translucent);
+}
+
+.participacao-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--white);
+  font-family: var(--font-secondary);
+  margin-bottom: 3rem;
+}
+
+.participacao-description {
+  font-size: 1.1rem;
+  color: var(--white);
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.participacao-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 2rem;
+}
+
+.participacao-card {
+  background: var(--light-gray-translucent);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  box-shadow: 0 2px 8px #0001;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 3rem 0 3rem;
+}
+
+.participacao-card-title {
+  color: var(--green);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+}
+
+.participacao-card-description {
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.participacao-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.participacao-card-list li {
+  margin-bottom: 0.5rem;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  background: var(--light-gray-translucent);
+}
+
+.about-title {
+  color: var(--dark-blue);
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 auto 2rem auto;
+  max-width: 800px;
+}
+
+.about-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px 0 var(--blue)22;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.about-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px 0 var(--blue)33;
+}
+
+.vagas-content {
+  background: rgba(255, 186, 8, 0.8);
+  margin-bottom: 3rem !important;
+}
+
+.vagas-title {
+  color: var(--dark-blue);
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.vagas-description {
+  color: var(--dark-blue);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 auto 32px auto;
+  max-width: 700px;
+}
+
+.vagas-button {
+  display: inline-block;
+  background-color: var(--red);
+  color: var(--white);
+  padding: 20px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 16px 0 var(--red)33;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.vagas-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px 0 var(--red)44;
+}
+
+.footer {
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-quote {
+  margin: 0;
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.footer-verse {
+  margin: 0;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: 2rem;
+  left: 47%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--white) !important;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-family: var(--font-secondary);
+  font-weight: 300;
+}
+
+.scroll-button span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+  width: 100%;
+  color: var(--white);
+}
+
+.scroll-button .arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: bounce 2s infinite;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 100vh !important;
+    height: 100dvh;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-text {
+    order: 1;
+    max-width: 800px;
+    max-height: 300px;
+    margin: 0 6rem;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .hero-image {
+    order: 2;
+    margin-top: 2rem;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  .professores-section {
+    margin-top: 0;
+    padding: 4rem 0;
+    min-height: auto;
+    margin-bottom: 0;
+  }
+
+  .professores-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .professores-container {
+    gap: 1.5rem;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .professores-top,
+  .professores-bottom {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .professor-card {
+    width: 250px !important;
+    padding: 1.5rem;
+  }
+
+  .professor-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .professor-role {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .professor-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .professores-bottom {
+    grid-template-columns: repeat(2, 224px);
+    gap: 1rem;
+  }
+
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-card:last-child {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .info-map {
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .participacao-section {
+    margin-top: 1rem;
+    min-height: auto;
+    margin-bottom: 3rem;
+  }
+
+  .participacao-content {
+    padding: 2rem;
+  }
+
+  .participacao-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .participacao-description {
+    margin-bottom: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .participacao-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .participacao-card {
+    padding: 1.5rem;
+    margin: 0;
+    width: 100%;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    padding: 4rem 1.5rem;
+    gap: 5rem;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .professores-section {
+    padding: 3rem 0;
+  }
+
+  .professores-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .professores-container {
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .professores-top,
+  .professores-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .professor-card {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .professores-bottom .professor-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .participacao-title,
+  .info-title,
+  .about-title,
+  .vagas-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .participacao-description,
+  .info-card-description,
+  .about-description,
+  .vagas-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .participacao-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .participacao-card {
+    padding: 1.5rem;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .participacao-card-title {
+    text-align: center;
+  }
+
+  .participacao-card-description {
+    text-align: center;
+  }
+
+  .participacao-card-list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .info-card-title {
+    text-align: center;
+  }
+
+  .info-card-description {
+    text-align: center;
+  }
+
+  .info-map {
+    height: 300px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .cta-button,
+  .about-button,
+  .vagas-button {
+    width: 100%;
+    max-width: 320px;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .footer {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .footer-quote {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .footer-verse {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1rem 0;
+  }
+
+  .hero-content {
+    padding: .8rem;
+    gap: 3rem;
+    background-color: var(--dark-blue);
+  }
+
+  .hero-text {
+    text-align: center;
+    gap: .5vh;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+    padding: 0 0.8rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1%;
+    margin-top: 2%;
+  }
+
+  .hero-image {
+    align-items: start;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .cta-button,
+  .gallery-button {
+    width: 160px !important;
+    font-size: 1.1rem;
+    padding: 0.875rem 1rem;
+    margin: 0;
+  }
+
+  .scroll-button {
+    left: 38% !important;
+    bottom: 1rem;
+  }
+
+  .professores-container {
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .professor-card,
+  .participacao-card,
+  .info-card {
+    padding: 1.25rem;
+  }
+
+  .participacao-section,
+  .info-section,
+  .about-section,
+  .vagas-section {
+    margin-top: 1rem !important;
+  }
+
+  .participacao-title,
+  .info-title,
+  .about-title,
+  .vagas-title {
+    font-size: 1.75rem;
+  }
+
+  .participacao-description,
+  .info-card-description,
+  .about-description,
+  .vagas-description {
+    font-size: 1rem;
+  }
+
+  .participacao-content,
+  .info-content {
+    padding: 1rem .8rem;
+  }
+
+  .about-content,
+  .vagas-content {
+    padding: 1.5rem;
+  }
+
+  .cta-button,
+  .about-button,
+  .vagas-button {
+    font-size: 1.1rem;
+    padding: 0.875rem 1.75rem;
+  }
+
+  .footer-quote {
+    font-size: 1rem;
+  }
+
+  .footer-verse {
+    font-size: 0.9rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+}

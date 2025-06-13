@@ -1,0 +1,136 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Inter:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Preload de fontes */
+@font-face {
+  font-family: 'Barriecito';
+  src: url('https://fonts.gstatic.com/s/barriecito/v1/WWXXlj-CbBOSLY2QTuY_KdUiYwTO0MU.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir Next Bold'), local('Avenir-Bold');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir Next Heavy'), local('Avenir-Heavy');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir Next Regular'), local('Avenir-Regular');
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Variáveis */
+:root {
+  /* Fonts */
+  --font-primary: 'Barriecito', cursive;
+  --font-secondary: 'Avenir', 'Inter', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-heading: 'Roboto', sans-serif;
+
+  /* Cores principais */
+  --red: rgb(208, 0, 0);
+  --dark-red: #9a0000;
+  --yellow: #ffba08;
+  --blue: #4e87d1;
+  --dark-blue: #162c48;
+  --green: #54775c;
+  --white: #ffffff;
+  --black: #00121c;
+  --light-black: rgb(75, 75, 75);
+  --light-gray: #f8f9fa;
+  --gray: #e2e8f0;
+
+  /* Cores da página Sobre */
+  --brown: #99582a;
+
+  /* Cores translúcidas */
+  --light-gray-translucent: rgba(248, 249, 250, 0.93);
+  --blue-translucent: rgba(78, 135, 209, 0.83);
+  --yellow-translucent: rgba(255, 186, 8, 0.83);
+  --green-translucent: rgba(84, 119, 92, 0.83);
+}
+
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--dark-blue);
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark-blue);
+}
+
+h1 {
+  font-family: var(--font-primary);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}

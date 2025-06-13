@@ -1,0 +1,797 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url("../../index.css");
+
+body.sobre-body {
+  background-image: none !important;
+  background-color: var(--white) !important;
+}
+
+.sobre-container {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.sobre-hero-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/sobre/coroa-espinhos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sobre-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sobre-hero-title {
+  color: var(--white);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-nossa-historia-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  gap: 3rem;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sobre-nossa-historia-content {
+  display: flex;
+  flex-direction: column; 
+  text-align: center;
+  align-items: center;
+  max-width: 50%;
+  flex: 1;
+}
+
+.sobre-nossa-historia-text {
+  min-width: 550px;
+}
+
+
+.sobre-nossa-historia-image {
+  order: 2;
+  margin-top: 2rem;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  color: var(--light-black);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.slider-arrow.prev {
+  left: 15px;
+}
+
+.slider-arrow.next {
+  right: 15px;
+}
+
+.slider-arrow svg {
+  display: none;
+}
+
+.slider-arrow.prev::before {
+  content: "<";
+}
+
+.slider-arrow.next::before {
+  content: ">";
+}
+
+.sobre-nossa-historia-heading,
+.sobre-pastor-heading,
+.sobre-horarios-heading,
+.sobre-localizacao-heading {
+  color: var(--brown);
+  font-size: clamp(2.5rem, 4vw, 1.5rem);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sobre-nossa-historia-text {
+  color: var(--black);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sobre-pastor-section {
+  margin: 4rem 0;
+  background: var(--brown);
+  padding: 4rem 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.sobre-pastor-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  text-align: left;
+}
+
+.sobre-pastor-image-container {
+  flex: 0 0 400px;
+  width: auto;
+  max-width: 400px;
+}
+
+.sobre-pastor-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.sobre-pastor-heading,
+.sobre-localizacao-heading {
+  color: var(--white);
+  text-align: left;
+}
+
+.sobre-pastor-content {
+  flex: 1;
+}
+
+.sobre-pastor-text {
+  color: var(--white);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.sobre-horarios {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.sobre-horarios-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.sobre-horarios-item {
+  color: var(--black);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.sobre-horarios-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.visita-section {
+  position: relative;
+  background: url('../../assets/images/sobre/igreja-icnv-uru.jpg') no-repeat center;
+  background-size: cover;
+  padding: 6rem 2rem;
+  margin: 4rem 0 0 0;
+  text-align: center;
+  border-top: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--gray-light);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.visita-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(91, 57, 33, 0.8);
+  z-index: 1;
+}
+
+.visita-section>* {
+  position: relative;
+  z-index: 2;
+}
+
+.visita-heading {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.visita-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--white);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sobre-localizacao {
+  text-align: left;
+  padding: 4rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  display: flex;
+  gap: 4rem;
+  align-items: start;
+  background-color: var(--brown);
+}
+
+.sobre-localizacao-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.sobre-localizacao-heading {
+  color: var(--white);
+  text-align: left;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.sobre-localizacao-text {
+  color: var(--white);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.sobre-localizacao-text strong {
+  font-weight: 600;
+}
+
+.sobre-localizacao-map {
+  flex: 1;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sobre-localizacao-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.footer {
+  background: rgb(24, 24, 24);
+  color: var(--white);
+  padding: 4rem 2rem;
+  margin: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.footer-top {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.footer-content {
+  flex: 1;
+  text-align: left;
+  padding-top: 0;
+}
+
+.footer-redes-sociais {
+  flex: 1;
+  text-align: left;
+  padding-top: 0;
+}
+
+.footer-redes-sociais-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  color: var(--white);
+  margin: 0 0 2rem 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-redes-sociais-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-left: 5rem;
+}
+
+.footer-redes-sociais-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-redes-sociais-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-redes-sociais-icon {
+  font-size: 2.8rem;
+}
+
+.footer-text {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.footer-verse {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--white);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-link .desktop-text {
+  display: inline;
+}
+
+.footer-link .mobile-text {
+  display: none;
+}
+
+.footer-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-section {
+  height: 80vh;
+  padding: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.instagram-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.instagram-subtitle {
+  font-size: 1.5rem;
+  color: var(--black);
+  margin-bottom: 3rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.instagram-widget {
+  width: 100%;
+  overflow: hidden;
+}
+
+.lightwidget-widget {
+  width: 100%;
+  border: none;
+  height: 600px;
+  overflow: hidden;
+}
+
+.scroll-button-sobre {
+  position: absolute;
+  bottom: 2rem;
+  left: 47%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 20;
+  font-family: var(--font-secondary);
+  font-weight: 300;
+}
+
+.scroll-button-sobre span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+  width: 100%;
+}
+
+.scroll-button-sobre .arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: bounce 2s infinite;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-button-sobre:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .sobre-hero-section {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .sobre-nossa-historia-section {
+    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .sobre-nossa-historia-content {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .sobre-nossa-historia-text {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .sobre-pastor-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .sobre-pastor-image-container {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sobre-pastor-content {
+    text-align: center;
+  }
+
+  .sobre-pastor-heading {
+    text-align: center;
+  }
+
+  .sobre-pastor-image-container {
+    margin: 0;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sobre-pastor-image {
+    width: 500px;
+    object-fit: cover;
+  }
+
+  .visita-section {
+    padding: 3rem 1rem;
+  }
+
+  .instagram-section {
+    height: auto;
+    min-height: 60vh;
+    padding: 2rem 1rem;
+  }
+
+  .sobre-localizacao {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+
+  .sobre-localizacao-content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .sobre-localizacao-heading,
+  .sobre-localizacao-text {
+    text-align: center;
+  }
+
+  .sobre-localizacao-map {
+    height: 350px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-hero-section {
+    height: 60vh;
+  }
+
+  .sobre-hero-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .sobre-hero-subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  }
+
+  .sobre-nossa-historia-heading,
+  .sobre-pastor-heading,
+  .sobre-horarios-heading,
+  .sobre-localizacao-heading {
+    font-size: clamp(1.8rem, 3vw, 2rem);
+  }
+
+  .sobre-nossa-historia-text,
+  .sobre-pastor-text,
+  .sobre-localizacao-text {
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  }
+
+  .footer-container {
+    gap: 2rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footer-content,
+  .footer-redes-sociais {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-redes-sociais-container {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .footer-redes-sociais-title {
+    text-align: center;
+  }
+
+  .footer-text,
+  .footer-verse {
+    text-align: center;
+  }
+
+  .sobre-pastor-container {
+    gap: 1rem;
+  }
+
+  .sobre-pastor-image-container {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-hero-section {
+    height: 60vh;
+  }
+
+  .sobre-hero-content {
+    padding: 0 1rem;
+  }
+
+  .scroll-button-sobre {
+    left: 40%;
+  }
+
+  .sobre-nossa-historia-section {
+    padding: 1.5rem;
+  }
+
+  .sobre-pastor-section {
+    padding: 2rem 1.1rem;
+  }
+
+  .sobre-pastor-container {
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .sobre-pastor-image-container {
+    max-height: 300px;
+    max-width: 250px;
+    height: 200px;
+  }
+
+  .sobre-pastor-image {
+    width: 300px;
+    object-fit: cover;
+  }
+
+  .sobre-horarios-container {
+    padding: 0 1rem;
+  }
+
+  .visita-section {
+    padding: 2rem 1rem;
+  }
+
+  .instagram-section {
+    padding: 1.5rem 1rem;
+    height: 40vh !important;
+    min-height: auto;
+  }
+
+  .instagram-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .sobre-localizacao {
+    padding: 2rem 1rem;
+  }
+
+  .sobre-localizacao-content {
+    margin: 0 .8rem;
+  }
+
+  .sobre-localizacao-text {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .sobre-localizacao-map {
+    padding: 0 0.8rem;
+  }
+
+  .sobre-localizacao-map iframe {
+    width: 100%;
+    height: 250px !important;
+    border-radius: 15px;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-redes-sociais-container {
+    gap: 1rem;
+  }
+
+  .footer-redes-sociais-link {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-redes-sociais-icon {
+    font-size: 2rem;
+  }
+}
