@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaPlay, FaChevronLeft, FaChevronRight, FaSearchPlus, FaSearchMinus } from 'react-icons/fa';
+import { FaPlay, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import './styles.css';
 

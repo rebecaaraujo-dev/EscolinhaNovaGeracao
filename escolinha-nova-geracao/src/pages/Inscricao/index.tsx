@@ -138,7 +138,7 @@ const Inscricao: React.FC = () => {
         throw new Error('Por favor, preencha o endereço completo do responsável.');
       }
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('inscricoes')
         .insert([{
           nome_aluno: formData.firstName,
