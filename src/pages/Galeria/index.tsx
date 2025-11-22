@@ -1,1 +1,0 @@
-import { FaPlay, FaChevronLeft, FaChevronRight } from 'react-icons/fa'; 

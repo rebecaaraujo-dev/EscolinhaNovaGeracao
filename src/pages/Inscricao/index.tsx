@@ -1,1 +1,0 @@
-const { error } = await supabase 
