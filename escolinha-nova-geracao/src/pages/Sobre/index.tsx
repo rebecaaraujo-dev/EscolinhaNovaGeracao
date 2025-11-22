@@ -7,6 +7,15 @@ import './styles.css';
 import familiaPastoral from '../../assets/images/sobre/familia-pastoral-1.jpg';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 
+// Import ICNV images
+import icnv1 from '../../assets/images/sobre/icnv-1.png';
+import icnv2 from '../../assets/images/sobre/icnv-2.png';
+import icnv3 from '../../assets/images/sobre/icnv-3.png';
+import icnv4 from '../../assets/images/sobre/icnv-4.png';
+import icnv5 from '../../assets/images/sobre/icnv-5.png';
+import icnv6 from '../../assets/images/sobre/icnv-6.png';
+import icnv7 from '../../assets/images/sobre/icnv-7.png';
+
 export default function Sobre() {
   const scrollToHistoria = () => {
     const historiaSection = document.querySelector('.sobre-nossa-historia-section');
@@ -19,13 +28,13 @@ export default function Sobre() {
   };
 
   const sliderImages = [
-    '/src/assets/images/sobre/icnv-1.png',
-    '/src/assets/images/sobre/icnv-2.png',
-    '/src/assets/images/sobre/icnv-3.png',
-    '/src/assets/images/sobre/icnv-4.png',
-    '/src/assets/images/sobre/icnv-5.png',
-    '/src/assets/images/sobre/icnv-6.png',
-    '/src/assets/images/sobre/icnv-7.png'
+    icnv1,
+    icnv2,
+    icnv3,
+    icnv4,
+    icnv5,
+    icnv6,
+    icnv7
   ];
 
   useEffect(() => {
@@ -190,8 +199,7 @@ export default function Sobre() {
           </p>
         </motion.section>
 
-
-        {/* Feed Instagram */}
+        {/* Feed Instagram
         <section className="instagram-section">
           <div className="instagram-container">
             <p className="instagram-subtitle">
@@ -207,6 +215,7 @@ export default function Sobre() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Localização */}
         <motion.div
