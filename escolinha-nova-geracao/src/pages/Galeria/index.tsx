@@ -5,6 +5,28 @@ import { FaPlay, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import './styles.css';
 
+// Import gallery images
+import galeria1 from '../../assets/images/galeria/galeria-1.jpg';
+import galeria2 from '../../assets/images/galeria/galeria-2.jpg';
+import galeria3 from '../../assets/images/galeria/galeria-3.jpg';
+import galeria4 from '../../assets/images/galeria/galeria-4.jpg';
+import galeria5 from '../../assets/images/galeria/galeria-5.jpg';
+import galeria6 from '../../assets/images/galeria/galeria-6.jpg';
+import galeria7 from '../../assets/images/galeria/galeria-7.jpg';
+import galeria8 from '../../assets/images/galeria/galeria-8.jpg';
+import galeria9 from '../../assets/images/galeria/galeria-9.jpg';
+import galeria10 from '../../assets/images/galeria/galeria-10.jpg';
+import galeria11 from '../../assets/images/galeria/galeria-11.jpg';
+import galeria12 from '../../assets/images/galeria/galeria-12.jpg';
+import galeriaVid1 from '../../assets/images/galeria/galeria-vid-1.mp4';
+import galeriaVid2 from '../../assets/images/galeria/galeria-vid-2.mp4';
+import galeriaVid3 from '../../assets/images/galeria/galeria-vid-3.mp4';
+import galeriaVid4 from '../../assets/images/galeria/galeria-vid-4.mp4';
+import galeriaVid5 from '../../assets/images/galeria/galeria-vid-5.mp4';
+import galeriaVid6 from '../../assets/images/galeria/galeria-vid-6.mp4';
+import galeriaVid7 from '../../assets/images/galeria/galeria-vid-7.mp4';
+import galeriaVid8 from '../../assets/images/galeria/galeria-vid-8.mp4';
+
 const Galeria: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -13,26 +35,26 @@ const Galeria: React.FC = () => {
   const imageRef = useRef<HTMLImageElement>(null);
 
   const media = useMemo(() => [
-    '/src/assets/images/galeria/galeria-1.jpg',
-    '/src/assets/images/galeria/galeria-2.jpg',
-    '/src/assets/images/galeria/galeria-3.jpg',
-    '/src/assets/images/galeria/galeria-4.jpg',
-    '/src/assets/images/galeria/galeria-5.jpg',
-    '/src/assets/images/galeria/galeria-6.jpg',
-    '/src/assets/images/galeria/galeria-7.jpg',
-    '/src/assets/images/galeria/galeria-8.jpg',
-    '/src/assets/images/galeria/galeria-9.jpg',
-    '/src/assets/images/galeria/galeria-10.jpg',
-    '/src/assets/images/galeria/galeria-11.jpg',
-    '/src/assets/images/galeria/galeria-12.jpg',
-    '/src/assets/images/galeria/galeria-vid-1.mp4',
-    '/src/assets/images/galeria/galeria-vid-2.mp4',
-    '/src/assets/images/galeria/galeria-vid-3.mp4',
-    '/src/assets/images/galeria/galeria-vid-4.mp4',
-    '/src/assets/images/galeria/galeria-vid-5.mp4',
-    '/src/assets/images/galeria/galeria-vid-6.mp4',
-    '/src/assets/images/galeria/galeria-vid-7.mp4',
-    '/src/assets/images/galeria/galeria-vid-8.mp4',
+    galeria1,
+    galeria2,
+    galeria3,
+    galeria4,
+    galeria5,
+    galeria6,
+    galeria7,
+    galeria8,
+    galeria9,
+    galeria10,
+    galeria11,
+    galeria12,
+    galeriaVid1,
+    galeriaVid2,
+    galeriaVid3,
+    galeriaVid4,
+    galeriaVid5,
+    galeriaVid6,
+    galeriaVid7,
+    galeriaVid8,
   ], []);
 
   const isVideo = (url: string) => url.endsWith('.mp4');
