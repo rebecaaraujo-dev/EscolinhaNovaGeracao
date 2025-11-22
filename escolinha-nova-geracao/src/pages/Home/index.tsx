@@ -5,13 +5,25 @@ import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import './styles.css';
 
+// Import images
+import escolinha1 from '../../assets/images/escolinha1.png';
+import escolinha2 from '../../assets/images/escolinha2.png';
+import escolinha3 from '../../assets/images/escolinha3.png';
+import escolinha4 from '../../assets/images/escolinha4.png';
+import escolinha5 from '../../assets/images/escolinha5.png';
+import tioFlavinho from '../../assets/images/professores/tio-flavinho.png';
+import tioAlex from '../../assets/images/professores/tio-alex.png';
+import tioFelipe from '../../assets/images/professores/tio-felipe.png';
+import tioMauricio from '../../assets/images/professores/tio-mauricio.png';
+import tioLucas from '../../assets/images/professores/tio-lucas.png';
+
 const Home: React.FC = () => {
   const sliderImages = [
-    '/src/assets/images/escolinha1.png',
-    '/src/assets/images/escolinha2.png',
-    '/src/assets/images/escolinha3.png',
-    '/src/assets/images/escolinha4.png',
-    '/src/assets/images/escolinha5.png'
+    escolinha1,
+    escolinha2,
+    escolinha3,
+    escolinha4,
+    escolinha5
   ];
 
   return (
@@ -82,7 +94,7 @@ const Home: React.FC = () => {
               className="professor-card"
             >
               <div className="professor-photo">
-                <img src="/src/assets/images/professores/tio-flavinho.png" alt="Tio Flavinho" />
+                <img src={tioFlavinho} alt="Tio Flavinho" />
               </div>
               <h3 className="professor-name">Tio Flavinho</h3>
               <p className="professor-role">TÉCNICO</p>
@@ -93,7 +105,7 @@ const Home: React.FC = () => {
               className="professor-card"
             >
               <div className="professor-photo">
-                <img src="/src/assets/images/professores/tio-alex.png" alt="Tio Alex" />
+                <img src={tioAlex} alt="Tio Alex" />
               </div>
               <h3 className="professor-name">Tio Alex</h3>
               <p className="professor-role">TÉCNICO</p>
@@ -104,7 +116,7 @@ const Home: React.FC = () => {
               className="professor-card"
             >
               <div className="professor-photo">
-                <img src="/src/assets/images/professores/tio-felipe.png" alt="Tio Felipe" />
+                <img src={tioFelipe} alt="Tio Felipe" />
               </div>
               <h3 className="professor-name">Tio Felipe</h3>
               <p className="professor-role">TÉCNICO</p>
@@ -117,7 +129,7 @@ const Home: React.FC = () => {
               className="professor-card"
             >
               <div className="professor-photo">
-                <img src="/src/assets/images/professores/tio-mauricio.png" alt="Tio Maurício" />
+                <img src={tioMauricio} alt="Tio Maurício" />
               </div>
               <h3 className="professor-name">Tio Maurício</h3>
               <p className="professor-role">TÉCNICO AUXILIAR</p>
@@ -128,21 +140,10 @@ const Home: React.FC = () => {
               className="professor-card"
             >
               <div className="professor-photo">
-                <img src="/src/assets/images/professores/tio-lucas.png" alt="Tio Lucas" />
+                <img src={tioLucas} alt="Tio Lucas" />
               </div>
               <h3 className="professor-name">Tio Lucas</h3>
               <p className="professor-role">TÉCNICO AUXILIAR</p>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.03, y: -5 }}
-              transition={{ duration: 0.2 }}
-              className="professor-card"
-            >
-              <div className="professor-photo">
-                <img src="/src/assets/images/professores/tio-ronaldo.png" alt="Tio Ronaldo" />
-              </div>
-              <h3 className="professor-name">Tio Ronaldo</h3>
-              <p className="professor-role">PREPARADOR FÍSICO</p>
             </motion.div>
           </div>
         </div>

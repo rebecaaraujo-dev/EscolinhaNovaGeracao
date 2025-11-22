@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { PatternFormat } from 'react-number-format';
 import '../../index.css';
 import './styles.css';
-import { supabase } from '../../supabaseClient';
+import { supabase } from '../../lib/supabase';
 
 const DDDs = [
   { value: '21', label: '21' },
