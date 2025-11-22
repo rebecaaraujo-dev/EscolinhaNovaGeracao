@@ -1,0 +1,179 @@
+.chamada-page {
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chamada-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  flex: 1;
+}
+
+.chamada-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.chamada-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+}
+
+.date-picker {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.date-picker input {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.date-picker button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.date-picker button:hover {
+  background-color: #0056b3;
+}
+
+.chamada-list {
+  margin-top: 2rem;
+}
+
+.chamada-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.chamada-info {
+  flex: 1;
+}
+
+.chamada-info h3 {
+  margin: 0;
+  color: #333;
+}
+
+.chamada-info p {
+  margin: 0.5rem 0 0;
+  color: #666;
+}
+
+.chamada-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.chamada-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.start-button-chamada {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  display: block;
+}
+
+.start-button-chamada:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.start-button-chamada:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .chamada-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .date-picker {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .date-picker input,
+  .date-picker button {
+    width: 100%;
+  }
+
+  .chamada-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .chamada-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .chamada-actions button {
+    flex: 1;
+  }
+
+  .start-button-chamada {
+    width: 100%;
+    max-width: 300px;
+  }
+}
